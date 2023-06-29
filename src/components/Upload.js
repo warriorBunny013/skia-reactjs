@@ -126,7 +126,8 @@ console.log(imgs)
           </div>}
           <div className="flex mx-20 mt-10 gap-10 justify-around">
            <button onClick={()=>filesClose(false)} className="px-10 border border-blue-400  rounded-xl py-2">Cancel</button>
-           <button className="bg-blue-500 px-10 rounded-xl py-2 text-white ">Browse Files</button>
+           <div className="bg-blue-500 px-10 rounded-xl py-2 text-white ">Browse Files
+           </div>
          </div>
           </div> 
     </>
