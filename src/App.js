@@ -7,11 +7,11 @@ import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import 'react-clock/dist/Clock.css'
 import Switch from '@mui/material/Switch';
-import { FileUploader } from "react-drag-drop-files";
+// import { FileUploader } from "react-drag-drop-files";
 import { Upload } from "./components/Upload";
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo,updateTodo,updateTodoNext} from './Reducers/todoReducer';
-const fileTypes = ["JPG", "PNG", "GIF"];
+// const fileTypes = ["JPG", "PNG", "GIF"];
 function App() {
 
 
@@ -19,7 +19,7 @@ function App() {
   const [popnext,setPopnext]=React.useState(false);
   const [filesClose,setFilesClose]=React.useState(false)
   const [BannerFilesClose,setBannerFilesClose]=React.useState(false)
-  const [file, setFile] = React.useState(null);
+  // const [file, setFile] = React.useState(null);
 
   //all the content in one state
   const [value, onChange] = React.useState(new Date());
@@ -71,9 +71,9 @@ function App() {
     setIsActiveOnline(true);
     setIsActiveOffline(false);
   }
-  const handleChangeFiles = (file) => {
-    setFile(file);
-  };
+  // const handleChangeFiles = (file) => {
+  //   setFile(file);
+  // };
   const handleIndividual=()=>{
     setIsActivePop(true);
     setIsActivePopGrp(false);

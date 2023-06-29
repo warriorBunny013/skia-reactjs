@@ -43,7 +43,9 @@ function Upload({ onDrop, maxFiles = 1 ,filesClose,title}) {
     if (onDrop) {
       onDrop(files);
     }
-  }, [files]);
+  }, 
+  // eslint-disable-next-line
+  [files]);
 
   const handlecut=()=>{
     setfiles("");
