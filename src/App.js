@@ -203,7 +203,7 @@ function App() {
             <div>Logout</div>
           </div>
         </div>
-        <div className="flex pl-[19rem] mt-[4.7rem]  bg-blue-100">
+        <div className="flex px-[13rem] mt-[4.7rem]  bg-blue-100">
          { pageNav?<div  className="flex flex-col min-h-[78vh] 2xl:w-[70rem] xl:w-[60rem] md:w-[50rem]  mx-10 my-10 rounded-md bg-white">
             <div className="flex flex-wrap px-10 pt-5 justify-between">
               <div className="text-3xl font-semibold">Events</div>
@@ -268,9 +268,12 @@ function App() {
               <div className="mt-8 flex flex-col gap-5">
                 <div>
                   <div className="text-xl mb-3">Description</div>
-                  <div className="px-10 py-4  flex justify-between border rounded-md shadow-lg border-slate-400">
-                    <textarea defaultValue={Cdesc} onChange={(e)=>setCDesc(e.target.value)} className=" border-0 pb-20 overflow-hidden" style={{resize:"none"}}>
+                  <div className="px-10 py-4 flex  border rounded-md shadow-lg border-slate-400">
+                    <div className="flex w-full">
+                    <textarea defaultValue={Cdesc} onChange={(e)=>setCDesc(e.target.value)} className="w-full border-0 pb-20 overflow-hidden" style={{resize:"none"}}>
                     </textarea>
+                    </div>
+                   
                     <div className="flex flex-col justify-end">
                     <button onClick={handleEdit} className="bg-orange-600 hover:bg-orange-500 px-12 text-white text-sm rounded-md py-2">Edit</button>
                     </div>
