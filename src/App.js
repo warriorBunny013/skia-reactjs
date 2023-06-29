@@ -199,8 +199,8 @@ function App() {
             </div>
           </div>
           <div className="text-sm px-10 flex flex-col my-4 gap-2 text-slate-600">
-            <div className="whitespace-nowrap flex gap-2"><img src="info.png" style={{height:"1rem"}} alt="home"/><div>Help & Information</div></div>
-            <div className="flex gap-2"><img src="remove.png" style={{height:"1rem"}} alt="home"/><div>Logout</div></div>
+            <div className="whitespace-nowrap flex gap-2"><img src="Info.png" style={{height:"1rem"}} alt="home"/><div>Help & Information</div></div>
+            <div className="flex gap-2"><img src="Remove.png" style={{height:"1rem"}} alt="home"/><div>Logout</div></div>
           </div>
         </div>
         <div className="flex px-[14rem] mt-[4.7rem]  bg-blue-50">
