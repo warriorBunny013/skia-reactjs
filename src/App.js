@@ -479,7 +479,7 @@ function App() {
               </button>
             <button onClick={handleOnline} className={`[&.active]:bg-blue-400 gap-2 pr-20 [&.active]:text-white ${isActiveOnline?'active':''} px-14 py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
             <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${isActiveOnline?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
-              {isActiveOnline?<img style={{height:"1rem"}} src="worldwideblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="vector.png" alt="offline"/>}
+              {isActiveOnline?<img style={{height:"1rem"}} src="worldwideblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="Vector.png" alt="offline"/>}
               </div>
               <div className="">online</div>
             </button>
