@@ -266,7 +266,7 @@ function App() {
             <img src="banner.png" className="rounded-md" alt="banner"/>
             <div className="absolute top-2 left-2"><button onClick={()=>setPageNav(true)} className="px-2 text-white text-xl">&larr;</button></div>
             </div>
-            <div className="m-5 mr-20">
+            <div className="m-5 mr-6">
               <div className="text-2xl font-medium">{content?.title}</div>
               <Toaster />
               <div className="flex gap-10 mt-5 border-b border-black">
@@ -292,33 +292,33 @@ function App() {
                 </div>
                 <div>
                   <div className="text-xl mb-3">Details</div>
-                  <div style={{width:"100%"}} className="px-10 py-4 flex flex-nowrap gap-4 justify-between border rounded-md shadow-lg border-slate-400">
-                   <div style={{width: "fitContent"}} className="flex flex-col gap-6">
-                   <div className="flex justify-between gap-3">
+                  <div style={{width:"100%"}} className="px-5 py-4   gap-4 flex justify-around border rounded-md shadow-lg border-slate-400">
+                   <div style={{width: "fitContent"}} className="flex  object-contain  flex-col gap-6">
+                   <div className="flex w-1/2 justify-between gap-3">
                      <div className="font-medium">Location</div>
-                      <input value={Cloc} onChange={(e)=>setCloc(e.target.value)}  type="text" placeholder="Enter event location" className="py-2 rounded-md p-10 border border-slate-500 text-slate-500"/>
+                      <input value={Cloc} onChange={(e)=>setCloc(e.target.value)}  type="text" placeholder="Enter event location" className="py-2  rounded-md p-5 border border-slate-500 text-slate-500"/>
                   </div>
                   
-                  <div className="flex justify-between gap-3">
-                    <div className="font-medium whitespace-wrap">Participation type</div>
-                    <div className="flex gap-2">
+                  <div className="flex gap-2">
+                    <div className="font-medium  whitespace-wrap">Participation type</div>
+                    <div className="flex  w-1/2 gap-2">
                     <button onClick={()=>{
                          setCtypeInd(true)
                          setCtypeGrp(false)
-                      }} className={`[&.active]:bg-blue-400 gap-2  [&.active]:text-white ${CtypeInd?'active':''} px-14 py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      }} className={`[&.active]:bg-blue-400 gap-2  [&.active]:text-white ${CtypeInd?'active':''} justify-center items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
             <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${CtypeInd?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {CtypeInd?<img style={{height:"1rem"}} src="personblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="personwhite.png" alt="offline"/>}
               </div>
-              <div className="">Individual</div>
+              <div className="ml-12 text-sm">Individual</div>
             </button>
                     <button onClick={()=>{
                          setCtypeInd(false)
                          setCtypeGrp(true)
-                      }} className={`[&.active]:bg-blue-400 gap-2  [&.active]:text-white ${CtypeGrp?'active':''} px-14 py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      }} className={`[&.active]:bg-blue-400 gap-2  w-1/2 [&.active]:text-white ${CtypeGrp?'active':''} px-10  py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
             <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${CtypeGrp?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {CtypeGrp?<img style={{height:"1rem"}} src="groupblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="groupwhite.png" alt="offline"/>}
               </div>
-              <div className="">Group</div>
+              <div className="ml-1 text-sm">Group</div>
             </button>
                       {/* <button onClick={()=>{
                          setCtypeInd(true)
@@ -330,7 +330,7 @@ function App() {
                       }} className={`[&.active]:bg-blue-400 pr-20 [&.active]:text-white ${CtypeGrp?'active':''} px-5 py-2 rounded-md border border-slate-500 text-slate-500`}>Group</button> */}
                     </div>
                     </div>
-                    <div className="flex justify-between gap-3">
+                    <div className="flex gap-2">
                   <div className="font-medium whitespace-wrap">Judging mode</div>
                   <div className="flex gap-2">
                   <button onClick={()=>{
@@ -338,33 +338,33 @@ function App() {
                        setChybrid(false)
                        setCjudging(false)
                      }}  
-                      className={`[&.active]:bg-blue-400  gap-2 pr-20 [&.active]:text-white ${Clikes?'active':''} px-20 py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      className={`[&.active]:bg-blue-400  gap-2 [&.active]:text-white ${Clikes?'active':''} py-2 justify-center items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
              <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${Clikes?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {Clikes?<img style={{height:"1rem"}} src="heartblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="heartwhite.png" alt="offline"/>}
               </div>
-              <div className="absolute left-12">Likes</div>
+              <div className="text-sm ml-12">Likes</div>
               </button>
                   <button onClick={()=>{
                        setClikes(false)
                        setChybrid(false)
                        setCjudging(true)
                     }} 
-                      className={`[&.active]:bg-blue-400  gap-2 pr-20 [&.active]:text-white ${Cjudging?'active':''} px-20 py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      className={`[&.active]:bg-blue-400  gap-2  [&.active]:text-white ${Cjudging?'active':''}  justify-center items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
              <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${Cjudging?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {Cjudging?<img style={{height:"1rem"}} src="gavelblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="gavelwhite.png" alt="offline"/>}
               </div>
-              <div className="absolute left-12">Judging</div>
+              <div className="text-sm ml-12">Judging</div>
               </button>
                   <button onClick={()=>{
                       setClikes(false)
                       setChybrid(true)
                       setCjudging(false)
                     }} 
-                      className={`[&.active]:bg-blue-400  gap-2 pr-20 [&.active]:text-white ${Chybrid?'active':''} px-20 py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      className={`[&.active]:bg-blue-400  gap-2 [&.active]:text-white ${Chybrid?'active':''}  justify-center items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
              <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${Chybrid?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {Chybrid?<img style={{height:"1rem"}} src="groupblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="groupwhite.png" alt="offline"/>}
               </div>
-              <div className="absolute left-12">Hybrid</div>
+              <div className="text-sm ml-12">Hybrid</div>
               </button>
                     {/* <button 
                      onClick={()=>{
@@ -387,30 +387,30 @@ function App() {
                   </div>
                   </div>
                    </div>
-                   <div style={{width: "fitContent"}} className="flex gap-6 flex-col">
-                    <div className="flex flex-col gap-8">
-                    <div className="flex justify-between gap-3">
+                   <div style={{width: "fitContent"}} className="flex  object-contain gap-6 flex-col">
+                    <div className="flex w-1/2 flex-col gap-8">
+                    <div className="flex w-1/2 justify-between gap-3">
                       <div className="font-medium">Event Mode</div>
                       <div className="flex gap-4">
                       <button onClick={()=>{
                            setCOffline(true)
                            setCOnline(false)
                       } }  
-                      className={`[&.active]:bg-blue-400  gap-2 pr-20 [&.active]:text-white ${COffline?'active':''} px-20 py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      className={`[&.active]:bg-blue-400  gap-2 [&.active]:text-white ${COffline?'active':''} justify-center items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
              <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${COffline?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {COffline?<img style={{height:"1rem"}} src="locationblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="locationwhite.png" alt="offline"/>}
               </div>
-              <div className="absolute left-12">offline</div>
+              <div className="text-sm ml-12">offline</div>
               </button>
                       <button onClick={()=>{
                           setCOffline(false)
                           setCOnline(true)
                       }} 
-                      className={`[&.active]:bg-blue-400  gap-2 pr-20 [&.active]:text-white ${COnline?'active':''} px-20 py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      className={`[&.active]:bg-blue-400  gap-2 [&.active]:text-white ${COnline?'active':''} justify-center items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
              <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${COnline?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {COnline?<img style={{height:"1rem"}} src="worldwideblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="Vector.png" alt="offline"/>}
               </div>
-              <div className="absolute left-12">online</div>
+              <div className="text-sm ml-12">online</div>
               </button>
                       {/* <button onClick={()=>{
                            setCOffline(true)
