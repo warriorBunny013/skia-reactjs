@@ -292,16 +292,17 @@ function App() {
                 </div>
                 <div>
                   <div className="text-xl mb-3">Details</div>
-                  <div style={{width:"100%"}} className="px-5 py-4   gap-4 flex justify-around border rounded-md shadow-lg border-slate-400">
-                   <div style={{width: "fitContent"}} className="flex  object-contain  flex-col gap-6">
-                   <div className="flex w-1/2 justify-between gap-3">
-                     <div className="font-medium">Location</div>
-                      <input value={Cloc} onChange={(e)=>setCloc(e.target.value)}  type="text" placeholder="Enter event location" className="py-2  rounded-md p-5 border border-slate-500 text-slate-500"/>
-                  </div>
-                  
-                  <div className="flex gap-2">
-                    <div className="font-medium  whitespace-wrap">Participation type</div>
-                    <div className="flex  w-1/2 gap-2">
+                  <div style={{width:"100%"}} className="px-5 py-4   gap-4 flex flex-col justify-around border rounded-md shadow-lg border-slate-400">
+                   <div style={{width: "fitContent"}} className="flex justify-around object-contain gap-2">
+        
+                   <div className="flex flex-col gap-4">
+                    <div className="font-medium">Location</div>
+                    <div className="font-medium xl:pt-4 whitespace-wrap">Participation type</div>
+                    <div className="font-medium xl:pt-6 whitespace-wrap">Judging mode</div>
+                   </div>
+                   <div lassName="flex flex-col gap-4">
+                   <input value={Cloc} onChange={(e)=>setCloc(e.target.value)}  type="text" placeholder="Enter event location" className="py-2 rounded-md p-5 border border-slate-500 text-slate-500"/>
+                   <div className="flex p-4 gap-2">
                     <button onClick={()=>{
                          setCtypeInd(true)
                          setCtypeGrp(false)
@@ -314,11 +315,11 @@ function App() {
                     <button onClick={()=>{
                          setCtypeInd(false)
                          setCtypeGrp(true)
-                      }} className={`[&.active]:bg-blue-400 gap-2  w-1/2 [&.active]:text-white ${CtypeGrp?'active':''} px-10  py-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      }} className={`[&.active]:bg-blue-400 gap-2  w-1/2 [&.active]:text-white ${CtypeGrp?'active':''} justify-center py-2 items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
             <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${CtypeGrp?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {CtypeGrp?<img style={{height:"1rem"}} src="groupblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="groupwhite.png" alt="offline"/>}
               </div>
-              <div className="ml-1 text-sm">Group</div>
+              <div className="ml-12 text-sm">Group</div>
             </button>
                       {/* <button onClick={()=>{
                          setCtypeInd(true)
@@ -329,10 +330,7 @@ function App() {
                          setCtypeGrp(true)
                       }} className={`[&.active]:bg-blue-400 pr-20 [&.active]:text-white ${CtypeGrp?'active':''} px-5 py-2 rounded-md border border-slate-500 text-slate-500`}>Group</button> */}
                     </div>
-                    </div>
                     <div className="flex gap-2">
-                  <div className="font-medium whitespace-wrap">Judging mode</div>
-                  <div className="flex gap-2">
                   <button onClick={()=>{
                        setClikes(true)
                        setChybrid(false)
@@ -385,18 +383,19 @@ function App() {
                       setCjudging(false)
                     }} className={`[&.active]:bg-blue-400 pr-20 [&.active]:text-white ${Chybrid?'active':''} px-5 py-2 rounded-md border border-slate-500 text-slate-500`}>Hybrid</button> */}
                   </div>
-                  </div>
                    </div>
-                   <div style={{width: "fitContent"}} className="flex  object-contain gap-6 flex-col">
-                    <div className="flex w-1/2 flex-col gap-8">
-                    <div className="flex w-1/2 justify-between gap-3">
-                      <div className="font-medium">Event Mode</div>
-                      <div className="flex gap-4">
+                   <div lassName="flex flex-col gap-4">
+                   <div className="font-medium xl:pb-2  whitespace-wrap">Event Mode</div>
+                   {CtypeGrp && <div className="font-medium  pt-4">Members</div>}
+                   <div className="font-medium pt-6">Private</div>
+                   </div>
+                   <div lassName="flex flex-col gap-4">
+                   <div className="flex pb-4 gap-x-2">
                       <button onClick={()=>{
                            setCOffline(true)
                            setCOnline(false)
                       } }  
-                      className={`[&.active]:bg-blue-400  gap-2 [&.active]:text-white ${COffline?'active':''} justify-center items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      className={`[&.active]:bg-blue-400  [&.active]:text-white ${COffline?'active':''} justify-center  py-2 items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
              <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${COffline?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {COffline?<img style={{height:"1rem"}} src="locationblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="locationwhite.png" alt="offline"/>}
               </div>
@@ -406,7 +405,7 @@ function App() {
                           setCOffline(false)
                           setCOnline(true)
                       }} 
-                      className={`[&.active]:bg-blue-400  gap-2 [&.active]:text-white ${COnline?'active':''} justify-center items-center pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
+                      className={`[&.active]:bg-blue-400  gap-2 [&.active]:text-white ${COnline?'active':''} justify-center items-center py-2 pr-2 rounded-md border border-slate-500 text-slate-500 flex relative`}>
              <div className={`[&.active]:bg-white [&.kimchi]:bg-blue-400 ${COnline?'active':'kimchi'} absolute left-2 flex rounded-md px-2 py-1`}>
               {COnline?<img style={{height:"1rem"}} src="worldwideblue.png" alt="offline"/>:<img style={{height:"1rem"}} src="Vector.png" alt="offline"/>}
               </div>
@@ -421,28 +420,27 @@ function App() {
                           setCOnline(true)
                       }} className={`[&.active]:bg-blue-400 pr-20 [&.active]:text-white ${COnline?'active':''} px-5 py-2 rounded-md border border-slate-500 text-slate-500`}>online</button> */}
                       </div>
-                    </div>
-                    {CtypeGrp && <div className="flex justify-between gap-3">
-                    <div className="font-medium">Members</div>
-                    <div className="flex">
-                      <input value={CMin} onChange={(e)=>setCMin(e.target.value)} placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min" type="text" className="py-1 w-[7rem] rounded-l-md pl-3 border border-slate-500 text-slate-500"/>
-                      <input value={CMax} onChange={(e)=>setCMax(e.target.value)} placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; max" type="text" className="py-1 w-[7rem] rounded-r-md pl-3 border border-slate-500 text-slate-500"/>
-                    </div>
-                    </div>}
-                    <div className="flex gap-3">
-                      <div className="font-medium">Private</div>
-                      <Switch
+                      {CtypeGrp && <div className="flex justify-between pb-4 gap-3">
+                   
+                   <div className="flex">
+                     <input value={CMin} onChange={(e)=>setCMin(e.target.value)} placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min" type="text" className="py-1 w-[5rem]  rounded-l-md pl-3 border border-slate-500 text-slate-500"/>
+                     <input value={CMax} onChange={(e)=>setCMax(e.target.value)} placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; max" type="text" className="py-1 w-[5rem] rounded-r-md pl-3 border border-slate-500 text-slate-500"/>
+                   </div>
+                   </div>}
+                   <Switch
                       checked={CPrivate}
                       onChange={(e)=>setCPrivate(e.target.checked)}
                       inputProps={{ 'aria-label': 'controlled' }}
                     />
-                  </div>
-                
-                    </div>
-                   <div className="flex justify-end">
-                    <button onClick={handleEditnext} style={{width:"2rem"}} className="bg-orange-600 flex justify-center hover:bg-orange-500 px-12 text-white text-sm rounded-md py-2">Edit</button>
-                    </div>
                    </div>
+                  
+        
+                   </div>
+                    
+                   <div className="flex justify-end mr-6">
+                    <button onClick={handleEditnext}  className="bg-orange-600 flex justify-center hover:bg-orange-500 px-12 text-white text-sm rounded-md py-2">Edit</button>
+                    </div>
+                   
                   </div>
                 </div>
                 
