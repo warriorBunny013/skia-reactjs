@@ -12,6 +12,10 @@ import { Upload } from "./components/Upload";
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo,updateTodo,updateTodoNext} from './Reducers/todoReducer';
 // const fileTypes = ["JPG", "PNG", "GIF"];
+import toast, { Toaster } from 'react-hot-toast';
+
+const notifyEdit = () => toast('Edited description!');
+const notifyEditnext = () => toast('Edited details!');
 function App() {
 
 
@@ -130,12 +134,16 @@ function App() {
   const desctodo=existingTodo[0]?.desc;
   // const [newdesc,setNewDesc]=React.useState(Cdesc);
   console.log("set desc",Cdesc)
-  const handleEdit=()=>{
+  
+  const handleEdit=async(e)=>{
+    
+
      dispatch(updateTodo({
         id:contentID,
         desc:Cdesc
      }))
      setContent({desc:desctodo})
+     notifyEdit()
   }
 
   const handleEditnext=()=>{
@@ -153,6 +161,7 @@ function App() {
       memMax:CMax,
       privateMode:CPrivate,
     }))
+    notifyEditnext()
   }
   const handleSubmit=(event)=>{
     const newid=~~(Math.random()*999);
@@ -259,12 +268,14 @@ function App() {
             </div>
             <div className="m-5 mr-20">
               <div className="text-2xl font-medium">{content?.title}</div>
+              <Toaster />
               <div className="flex gap-10 mt-5 border-b border-black">
                 <div>Overview</div>
                 <div>Evaluation</div>
                 <div>Rewards</div>
                 <div>Timeline</div>
               </div>
+              <Toaster />
               <div className="mt-8 flex flex-col gap-5">
                 <div>
                   <div className="text-xl mb-3">Description</div>
@@ -436,6 +447,7 @@ function App() {
                 </div>
                 
               </div>
+              
             </div>
           </div>}
         </div>
