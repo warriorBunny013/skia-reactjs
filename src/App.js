@@ -261,7 +261,7 @@ function App() {
               
             </div>)}
           </div>:
-          <div className="flex flex-col mx-10 my-10 rounded-md bg-white">
+          <div className="flex flex-col mx-10 2xl:w-[70rem] xl:w-[60rem] md:w-[50rem] my-10 rounded-md bg-white">
             <div className="relative"> 
             <img src="banner.png" className="rounded-md" alt="banner"/>
             <div className="absolute top-2 left-2"><button onClick={()=>setPageNav(true)} className="px-2 text-white text-xl">&larr;</button></div>
@@ -275,7 +275,7 @@ function App() {
                 <div>Rewards</div>
                 <div>Timeline</div>
               </div>
-              <Toaster />
+              
               <div className="mt-8 flex flex-col gap-5">
                 <div>
                   <div className="text-xl mb-3">Description</div>
