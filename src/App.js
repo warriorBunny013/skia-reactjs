@@ -149,8 +149,8 @@ function App() {
       judging:Cjudging,
       eventOffline:COffline,
       eventOnline:COnline,
-      memMin:memMin,
-      memMax:memMax,
+      memMin:CMin,
+      memMax:CMax,
       privateMode:CPrivate,
     }))
   }
